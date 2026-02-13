@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../../controller/blog');
 const Post = require('../module/post');
+const { route } = require('./admin');
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -55,18 +56,9 @@ router.get('/post/:id', async (req, res) => {
     }
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
+router.get('/contact', (req, res) => {
+    res.render('contact');
+});
 
 router.get('/about', (req, res) => {
     const locals = {
@@ -74,6 +66,14 @@ router.get('/about', (req, res) => {
         description: 'Learn more about us on this page'
     }
     res.render('about', { locals });
+});
+
+router.get('/login', (req, res) => {
+    const locals = {
+        title: 'Login',
+        description: 'Login to access the admin panel'
+    }
+    res.render('login', { locals });
 });
 
 

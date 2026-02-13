@@ -298,7 +298,7 @@ img {
 
 /* SearchBar */
 .searchBar {
-  /* visibility: hidden; */
+  visibility: hidden;
   transform: translateY(-20px);
   background-color: var(--black);
   padding: 4px 0;
